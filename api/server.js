@@ -6,7 +6,7 @@ server.use(express.json())
 
 server.use('/api/cars', carsRouter)
 
-server('*', (req, res, next) => {
+server.get('*', (req, res, next) => {
     next({ status: 404, message: 'not found'})
 })
 
